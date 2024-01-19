@@ -1,0 +1,35 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    height: 98vh;
+    justify-content: center;
+}
+
+.open {
+    background: rgb(0, 153, 0);
+}
+.close, .open {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: white;
+    margin-left: 4px;
+    cursor: pointer;
+
+}
+.close {
+    background-color: red;
+}
+
+.maindiv, .supDiv {
+    display: flex;
+    align-items: center;
+}
+
+#root {
+    margin-bottom: 150px;
+}
