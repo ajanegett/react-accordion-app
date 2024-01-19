@@ -1,15 +1,16 @@
 import { Children, useEffect, useRef, useState } from "react";
 import "./App.css";
-import autoAnimate from '@formkit/auto-animate'
+import autoAnimate from "@formkit/auto-animate";
 
-export default function Accordiondiv({ title, text, indexVal  }) { //indexVal is for grouping 2 accordions together.
+export default function Accordiondiv({ title, text, indexVal }) {
+  //indexVal is for grouping 2 accordions together.
   const [isOpen, setIsOpen] = useState(false);
-  const parentRef = useRef(null)
+  const parentRef = useRef(null);
   useEffect(() => {
     if (parentRef.current) {
-      autoAnimate(parentRef.current);   
+      autoAnimate(parentRef.current);
     }
-  }, [Children])
+  }, [Children]);
 
   return (
     <div className="bigDiv" ref={parentRef}>
@@ -19,7 +20,9 @@ export default function Accordiondiv({ title, text, indexVal  }) { //indexVal is
           className="open"
           onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
         >
-          <span className="material-symbols-outlined">{isOpen ? 'expand_less' : 'expand_more'}</span>
+          <span className="material-symbols-outlined">
+            {isOpen ? "expand_less" : "expand_more"}
+          </span>
         </div>
       </div>
       {isOpen && <div className={`supDiv m${indexVal}`}>{text}</div>}
